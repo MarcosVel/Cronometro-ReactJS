@@ -36,7 +36,15 @@ class App extends Component {
   }
 
   limpar() {
+    if (this.timer !== null) {
+      clearInterval(this.timer);
+      this.timer = null;
+    }
 
+    let state = this.state;
+    state.numero = 0;
+    state.botao = 'VAI';
+    this.setState(state);
   }
 
   render() {
